@@ -9,7 +9,7 @@ It is set up in a way that will auto build when any changes are made.
 To use the pack simply set the server resource pack in your `server.properties` to:
 
 ```
-(url)
+https://github.com/PixelAgent007/incendium-rp/releases/latest/download/resourcepack.zip
 ```
 
 You can also fork and modify it, the auto build will persist.

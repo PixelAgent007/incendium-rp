@@ -23,7 +23,7 @@ jobs:
                   prerelease: false
                   release_name: Build c${{ steps.commit.outputs.short }}
                   tag_name: c${{ steps.commit.outputs.short }}
-                  description: Sha256 Hash: ${{ steps.hash.outputs.hash }}
+                  body: Sha256 Hash: ${{ steps.hash.outputs.hash }}
               env:
                   GITHUB_TOKEN: ${{ github.token }}
             - name: Upload the jar and add it to the release

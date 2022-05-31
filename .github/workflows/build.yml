@@ -1,4 +1,4 @@
-name: Java CI
+name: Package zip and release it
 on: [push]
 
 jobs:
@@ -8,7 +8,7 @@ jobs:
             - name: Checkout git
               uses: actions/checkout@v3
             - name: Install sha256sum
-              run: apt-get install sha256sum -y
+              run: sudo apt-get install sha256sum -y
             - name: Get short commit id
               id: commit
               uses: pr-mpt/actions-commit-hash@v1

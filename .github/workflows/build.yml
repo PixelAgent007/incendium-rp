@@ -13,7 +13,7 @@ jobs:
             - name: Create zip
               run: zip -r resourcepack.zip *
             - name: Get hash
-              run: echo "::set-output name=hash::$(sha256sum ./resourcepack.zip)"
+              run: echo "::set-output name=hash::$(sha256sum ./resourcepack.zip | sed 's/ .\/resourcepack.zip//')"
               id: hash
             - name: Create release
               uses: actions/create-release@v1
@@ -22,7 +22,8 @@ jobs:
                   draft: false
                   prerelease: false
                   release_name: Build c${{ steps.commit.outputs.short }}
-                  tag_name: c${{ steps.hash.outputs.hash }}
+                  tag_name: c${{ steps.commit.outputs.short }}
+                  description: Sha256 Hash: ${{ steps.hash.outputs.hash }}
               env:
                   GITHUB_TOKEN: ${{ github.token }}
             - name: Upload the jar and add it to the release

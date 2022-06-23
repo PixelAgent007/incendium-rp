@@ -1,0 +1,14 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "item/bow_pulling_1"
+    },
+"overrides": [
+        {
+            "predicate": {
+              "custom_model_data": 87002
+            },
+            "model": "1_splatus:item/spirit_bow1"
+        }
+    ]
+}

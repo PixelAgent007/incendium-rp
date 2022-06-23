@@ -6,6 +6,12 @@
   "overrides": [
     {
       "predicate": {
+        "custom_model_data": 87007
+      },
+      "model": "1_splatus:item/corrupt"
+    },
+    {
+      "predicate": {
         "custom_model_data": 1450401
       },
       "model": "incendium:item/powder"

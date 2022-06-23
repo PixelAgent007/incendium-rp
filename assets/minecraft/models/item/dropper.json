@@ -1,0 +1,83 @@
+{
+  "parent": "minecraft:block/dropper",
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 330000
+      },
+      "model": "tcc:block/nether_reactor_core/off"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330001
+      },
+      "model": "tcc:block/nether_reactor_core/on"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330002
+      },
+      "model": "tcc:block/positional_anchor/empty"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330003
+      },
+      "model": "tcc:block/positional_anchor/filled"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330004
+      },
+      "model": "tcc:block/soul_seer/off"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330005
+      },
+      "model": "tcc:block/soul_seer/on"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330006
+      },
+      "model": "tcc:block/snail_nest/full"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330007
+      },
+      "model": "tcc:block/soul_conductor/north"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330008
+      },
+      "model": "tcc:block/soul_conductor/east"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330009
+      },
+      "model": "tcc:block/soul_conductor/south"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330010
+      },
+      "model": "tcc:block/soul_conductor/west"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330011
+      },
+      "model": "tcc:block/soul_conductor/up"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 330012
+      },
+      "model": "tcc:block/soul_conductor/down"
+    }
+  ]
+}

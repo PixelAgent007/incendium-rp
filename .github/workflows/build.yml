@@ -1,0 +1,37 @@
+name: Package zip and release it
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout git
+              uses: actions/checkout@v3
+            - name: Get short commit id
+              id: commit
+              uses: pr-mpt/actions-commit-hash@v1
+            - name: Create zip
+              run: zip -r resourcepack.zip *
+            - name: Get hash
+              run: echo "::set-output name=hash::$(sha1sum ./resourcepack.zip | sed 's/ .\/resourcepack.zip//')"
+              id: hash
+            - name: Create release
+              uses: actions/create-release@v1
+              id: create_release
+              with:
+                  draft: false
+                  prerelease: false
+                  release_name: Build c${{ steps.commit.outputs.short }}
+                  tag_name: c${{ steps.commit.outputs.short }}
+                  body: Sha1 Hash - ${{ steps.hash.outputs.hash }}
+              env:
+                  GITHUB_TOKEN: ${{ github.token }}
+            - name: Upload the jar and add it to the release
+              uses: actions/upload-release-asset@v1
+              env:
+                  GITHUB_TOKEN: ${{ github.token }}
+              with:
+                  upload_url: ${{ steps.create_release.outputs.upload_url }}
+                  asset_path: ./resourcepack.zip
+                  asset_name: resourcepack.zip
+                  asset_content_type: application/zip
